@@ -12,7 +12,7 @@ Unityでの音声操作が簡単に行えるようになります。
 
 2.アクティブなシーン上に、Soundフォルダ内のSoundManagerプレハブを追加。
 
-3.追加したSoundManagerを右クリックし、プレハブ > 展開 によりプレハとの紐付けを解除する。
+3.追加したSoundManagerを右クリックし、プレハブ > 展開 によりプレハブとの紐付けを解除する。
 
 <img width="612" alt="image2" src="https://user-images.githubusercontent.com/84651801/162545380-a0c62c9d-6d59-4e0f-86e5-d6ff6bbe7c40.png">
 
