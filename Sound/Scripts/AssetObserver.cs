@@ -51,9 +51,10 @@ public class AssetObserver:AssetPostprocessor
         string[] seNames = Directory.GetFiles("Assets/Sound/SE","*",System.IO.SearchOption.AllDirectories);
         foreach (var name in seNames)
         {
-            if (!name.Contains(".meta"))
+            string capitalName = name.ToUpper();
+            if ((capitalName.Contains(".MP3")||capitalName.Contains(".WAV"))&&!capitalName.Contains(".META"))
             {
-                string newName = name.Substring(name.LastIndexOf("/")+1).ToUpper().Replace(".WAV","").Replace(".MP3","");
+                string newName = capitalName.Substring(name.LastIndexOf("/")+1).Replace(".WAV","").Replace(".MP3","");
                 seList.Add(newName);
                 ses.Add(AssetDatabase.LoadAssetAtPath<AudioClip>(name));
             }
@@ -65,9 +66,10 @@ public class AssetObserver:AssetPostprocessor
         string[] bgmNames = Directory.GetFiles("Assets/Sound/BGM/Loop", "*", System.IO.SearchOption.AllDirectories);
         foreach(var name in bgmNames)
         {
-            if (!name.Contains(".meta"))
+            string capitalName = name.ToUpper();
+            if ((capitalName.Contains("MP3")||capitalName.Contains("WAV")) && !capitalName.Contains(".META"))
             {
-                string newName= name.Substring(name.LastIndexOf("/")+1).ToUpper().Replace(".WAV", "").Replace(".MP3", "").Replace("LOOP","").ToUpper();
+                string newName= capitalName.Substring(name.LastIndexOf("/")+1).Replace(".WAV", "").Replace(".MP3", "").Replace("LOOP","").ToUpper();
                 bgmList.Add(newName);
                 loops.Add(AssetDatabase.LoadAssetAtPath<AudioClip>(name));
             }
@@ -77,7 +79,8 @@ public class AssetObserver:AssetPostprocessor
         string[] bgmNames2 = Directory.GetFiles("Assets/Sound/BGM/Intro","*", System.IO.SearchOption.AllDirectories);
         foreach(var name in bgmNames2)
         {
-            if (!name.Contains(".meta"))
+            string capitalName = name.ToUpper();
+            if ((capitalName.Contains(".MP3") || capitalName.Contains(".WAV")) && !capitalName.Contains(".META"))
             {
                 intros.Add(AssetDatabase.LoadAssetAtPath<AudioClip>(name));
             }
